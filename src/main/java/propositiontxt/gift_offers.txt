@@ -1,0 +1,4 @@
+Gift1,Chocolate,200,20,Milk
+Gift2,Gummy,150,15,Fruit
+Gift3,Cookie,100,10,Vanilla
+Gift4,Lolipop,50,5,Strawberry

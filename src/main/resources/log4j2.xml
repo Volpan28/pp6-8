@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+
+        <File name="FileAppender" fileName="C:\Users\User\Desktop\lab5-8_pp old\logger.log" append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+
+        <SMTP name="EmailAppender" subject="Critical Error in Application"
+              to="volpan28@gmail.com" from="volpan28@gmail.com"
+              smtpHost="smtp.gmail.com" smtpPort="465"
+              smtpUsername="volpan28@gmail.com" smtpPassword="vahx bkyu qiru cfzm"
+              smtpProtocol="smtps" smtpDebug="false">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+            <Filters>
+                <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </SMTP>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="FileAppender"/>
+            <AppenderRef ref="EmailAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>
